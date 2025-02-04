@@ -1,0 +1,24 @@
+//Valid Palindrome
+class Solution {
+    public boolean isPalindrome(String s) {
+        s= s.toLowerCase();
+        StringBuilder str = new StringBuilder();
+        for(int i =0; i < s.length();i++){
+            if(s.charAt(i) >='a' && s.charAt(i)<='z' || s.charAt(i) >= '0' && s.charAt(i) <='9'){
+                str.append(s.charAt(i));
+            }
+        }
+        String output = str.toString();
+        int i =0; 
+        int j=output.length()-1;
+        while(i<j){
+            if(output.charAt(i) != output.charAt(j)){
+                return false;
+            }
+            i++;j--;
+        }
+        
+        return true;
+        
+    }
+}
